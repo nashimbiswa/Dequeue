@@ -3,7 +3,7 @@ using namespace std;
 
 struct Dequeue
 {
-    int capacity,size,front,rear;
+    int capacity,size,front;
     int *arr;
     Dequeue(int cap)
     {
@@ -52,8 +52,7 @@ struct Dequeue
             cout<<"Enter the data to insert in the Queue:\n";
             cin>>data;
             int rear=getRear();
-            // rear=(front+size)%capacity
-            rear=(rear+1)%capacity;
+            rear=(front+size)%capacity;
             arr[rear]=data;
             ++size;
         }
@@ -113,7 +112,6 @@ int main(int argc, char const *argv[])
     cin>>capacity;
     Dequeue q1(capacity);
     int choice,val,dat,da;
-    bool res1,res2;
     do
     {
         
